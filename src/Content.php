@@ -1,31 +1,46 @@
-<?php
+<?php namespace FTS;
 
 class Content
 {
-  $public contentTable;
+    public $contentTable;
 
-  public function __construct()
-  {
-      $this->contentTable = array();
-  }
+    /**
+     *
+     */
+    public function __construct()
+    {
+        $this->contentTable = [];
+    }
 
-  public function getContentNum()
-  {
-    return count($this->contentTable);
-  }
+    /**
+     * @return int
+     */
+    public function getContentNum()
+    {
+        return count($this->contentTable);
+    }
 
-  public function set($content)
-  {
-      $this->contentTable[$this->getContentNum] = $content;
-      $currentIndex = $this->getContentNum - 1;
-      return $currentIndex;
-  }
+    /**
+     * @param $content
+     * @return mixed
+     */
+    public function set($content)
+    {
+        $this->contentTable[$this->getContentNum()] = $content;
+        $currentIndex = $this->getContentNum() - 1;
 
-  public function get($id)
-  {
-    return $this->contentTable[$id];
+        return $currentIndex;
+    }
 
-  }
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function get($id)
+    {
+        return $this->contentTable[$id];
+
+    }
 
 
 }
